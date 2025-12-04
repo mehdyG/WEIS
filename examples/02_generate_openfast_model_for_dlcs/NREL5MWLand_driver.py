@@ -6,9 +6,9 @@ TEST_RUN = False
 
 ## File management
 run_dir = os.path.dirname( os.path.realpath(__file__) )
-fname_wt_input = os.path.join(run_dir, "..", "00_setup", "ref_turbines", "nrel5mw-spar_oc3.yaml")
-fname_modeling_options = os.path.join(run_dir, "oc3_modeling.yaml")
-fname_analysis_options = os.path.join(run_dir, "oc3_analysis.yaml")
+#fname_wt_input = os.path.join(run_dir, "..", "00_setup", "ref_turbines", "nrel5mw-spar_oc3.yaml")
+fname_modeling_options = os.path.join(run_dir, "NREL5MWLand_modeling.yaml")
+fname_analysis_options = os.path.join(run_dir, "NREL5MWLand_analysis.yaml")
 
 wt_opt, modeling_options, opt_options = weis_main(fname_wt_input, 
                                                  fname_modeling_options, 
