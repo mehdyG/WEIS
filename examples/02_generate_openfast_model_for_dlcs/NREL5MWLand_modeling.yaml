@@ -85,40 +85,40 @@ OpenFAST: # Options for WEIS fidelity level 3 = nonlinear time domain
     flag: True
     #regulation_trajectory: IEA-15-240-RWT-outputs.yaml   		#for initial conditions 
     openfast_file: 5MW_Land_DLL_WTurb.fst
-    openfast_dir: ../00_setup/OpenFAST_models//_NREL5MW_FASTfiles/5MW_Land_DLL_WTurb
-    simulation:
-        DT: 0.0125
-        CompElast: 1
-        CompInflow: 1
-        CompAero: 2
-        CompServo: 1
-        CompHydro: 1
-        CompSub: 0
-        CompMooring: 3
-        CompIce: 0
-        SttsTime: 10.0
-        OutFileFmt: 3
+    openfast_dir: ../00_setup/OpenFAST_models/_NREL5MW_FASTfiles/5MW_Land_DLL_WTurb
+    #simulation:
+        #DT: 0.0125
+        #CompElast: 1
+        #CompInflow: 1
+        #CompAero: 2
+        #CompServo: 1
+        #CompHydro: 1
+        #CompSub: 0
+        #CompMooring: 3
+        #CompIce: 0
+        #SttsTime: 10.0
+        #OutFileFmt: 3
     linearization:
         Linearize: False
-    ElastoDyn:
-        FlapDOF1: True
-        FlapDOF2: True
-        EdgeDOF: True
-        TeetDOF: False
-        DrTrDOF: False 
-        GenDOF: True
-        YawDOF: False  
-        TwFADOF1 : True
-        TwFADOF2 : False    # second tower mode is problematic
-        TwSSDOF1 : True
-        TwSSDOF2 : False    # second tower mode is problematic
-        PtfmSgDOF: True
-        PtfmSwDOF: True
-        PtfmHvDOF: True
-        PtfmRDOF : True
-        PtfmPDOF : True
-        PtfmYDOF : False
-        SumPrint: True
+    #ElastoDyn:
+        #FlapDOF1: True
+        #FlapDOF2: True
+        #EdgeDOF: True
+        #TeetDOF: False
+        #DrTrDOF: False 
+        #GenDOF: True
+        #YawDOF: False  
+        #TwFADOF1 : True
+        #TwFADOF2 : False    # second tower mode is problematic
+        #TwSSDOF1 : True
+        #TwSSDOF2 : False    # second tower mode is problematic
+        #PtfmSgDOF: True
+        #PtfmSwDOF: True
+        #PtfmHvDOF: True
+        #PtfmRDOF : True
+        #PtfmPDOF : True
+        #PtfmYDOF : False
+        #SumPrint: True
     #SeaState:
         #WaveTMax: 800
         #WvLowCOff: 0.15708
@@ -126,6 +126,7 @@ OpenFAST: # Options for WEIS fidelity level 3 = nonlinear time domain
 
 ROSCO:
     flag: True
+    tuning_yaml: ../00_setup/OpenFAST_models/_NREL5MW_FASTfiles/5MW_Land_DLL_WTurb/NREL5MW.yaml
     SD_Mode: 0
     PS_Mode: 1
     Fl_Mode: 2
@@ -138,13 +139,13 @@ ROSCO:
     
 DLC_driver:
     DLCs:
-        - DLC: "1.1"
+        - DLC: "1.2"
           ws_bin_size: 2
-          wind_speed: [14.,16., 18., 20., 22.]
-          wave_height: [7.]
-          wave_period: [1.]
-          n_seeds: 1
-          analysis_time: 1.
+          wind_speed: [3.,5.,7.,9.,11.,13.,15.,17.,19.,21.,23.,25.]
+          #wave_height: [7.]
+          #wave_period: [1.]
+          n_seeds: 6
+          analysis_time: 660
           transient_time: 0.
           turbulent_wind:
               HubHt: 90.0
